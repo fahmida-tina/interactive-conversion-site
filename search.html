@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Search List</title>
+</head>
+<body>
+    <h1>Search List</h1>
+    <script type="search.js"></script>
+    <form action="/conversion/search.php" method="Get" name="nForm onsubmit="getResult(this);return false;">
+        <input type="text" name="History" value="">
+        <input type="submit" name="search" value="Search">
+    </form>
+    <hr>
+    <hr>
+    <script>
+        function getresults(pForm){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function();{
+            document.getElementById("result").innerHTML = JSON.parse(this.responseText)[2].History;
+        }
+        xhttp.open("Get",pFrom.action + "History=" + pForm.History.value, true);
+        xhttp.send();
+}
+</script>>
+    </body>
+</html>
